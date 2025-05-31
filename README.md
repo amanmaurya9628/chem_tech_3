@@ -4,7 +4,7 @@
 <b>Discipline | <b>chemical engineering
 :--|:--|
 <b> Lab | <b> chemistry lab
-<b> Experiment|     <b> Fill your experiment name and number here
+<b> Experiment|     <b> Element detection and identification of functional group in organic compounds
 
 ### About the Experiment 
 
