@@ -1,13 +1,386 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-	<!-- Add CSS at the head of HTML file -->
-    <link rel="stylesheet" href="./css/main.css">
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Virtual Lab Simulator - Functional Group Detection</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap');
+  body {
+    margin: 0;
+    background: #1b1f38;
+    font-family: 'Montserrat', sans-serif;
+    color: #e0e0e0;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+  }
+  header {
+    background: linear-gradient(90deg, #2a2e4a, #5f6984);
+    padding: 1rem 2rem;
+    text-align: center;
+    box-shadow: 0 3px 10px rgba(0,0,0,0.5);
+  }
+  header h1 {
+    margin: 0;
+    font-weight: 700;
+    color: #ffd600;
+    text-shadow: 1px 1px 5px rgba(255,214,0,0.7);
+  }
+  main {
+    flex: 1;
+    display: flex;
+    padding: 2rem;
+    gap: 2rem;
+    max-width: 960px;
+    margin: 0 auto;
+    flex-wrap: wrap;
+  }
+  section {
+    background: #2a2e4a;
+    border-radius: 12px;
+    padding: 1.5rem;
+    box-shadow: 0 6px 15px rgba(0,0,0,0.5);
+    flex: 1 1 320px;
+    display: flex;
+    flex-direction: column;
+  }
+  section h2 {
+    font-weight: 700;
+    margin-bottom: 1rem;
+    color: #ffd600;
+    border-bottom: 2px solid #ffd600;
+    padding-bottom: 0.5rem;
+  }
+  label {
+    display: block;
+    margin-bottom: 0.5rem;
+    font-weight: 600;
+    color: #fce300;
+  }
+  select, input[type="text"] {
+    padding: 0.5rem 0.75rem;
+    border-radius: 6px;
+    border: none;
+    outline: none;
+    font-size: 1rem;
+    width: 100%;
+    box-sizing: border-box;
+    margin-bottom: 1rem;
+    transition: box-shadow 0.3s ease;
+  }
+  select:focus, input[type="text"]:focus {
+    box-shadow: 0 0 8px #ffd600;
+    background: #454a71;
+    color: #fff;
+  }
+  button {
+    background: #ffd600;
+    border: none;
+    font-weight: 700;
+    padding: 0.7rem 1.2rem;
+    border-radius: 8px;
+    cursor: pointer;
+    color: #2a2e4a;
+    transition: background 0.3s ease;
+    align-self: flex-start;
+    user-select: none;
+    box-shadow: 0 5px 15px #d6b008;
+  }
+  button:hover {
+    background: #f3c500;
+  }
+  .test-list {
+    font-size: 0.9rem;
+    line-height: 1.5;
+    color: #ddd;
+    flex-grow: 1;
+    overflow-y: auto;
+    padding-right: 0.5rem;
+  }
+  .test-list::-webkit-scrollbar {
+    width: 8px;
+  }
+  .test-list::-webkit-scrollbar-thumb {
+    background: #ffd600;
+    border-radius: 10px;
+  }
+  .result {
+    margin-top: 1rem;
+    background: #454a71;
+    border-radius: 8px;
+    padding: 1rem;
+    color: #fdf6d8;
+    min-height: 5rem;
+    box-shadow: inset 0 0 8px #ffd600;
+    user-select: text;
+  }
+  footer {
+    text-align: center;
+    padding: 1rem 0;
+    background: #2a2e4a;
+    font-size: 0.85rem;
+    color: #aaa;
+  }
+  .compound-structure {
+    font-family: monospace;
+    font-size: 1.2rem;
+    background: #383e60;
+    padding: 0.8rem;
+    border-radius: 8px;
+    color: #ffd600;
+    user-select: text;
+    margin-bottom: 1rem;
+  }
+  /* Scroll container */
+  .scrollable {
+    overflow-y: auto;
+    max-height: 260px;
+    border: 1px solid #555;
+    border-radius: 8px;
+    padding: 0.8rem;
+    background: #383e60;
+  }
+</style>
 </head>
 <body>
-		<!-- Your code goes here-->
+    <header>
+ 
+ <h1>Virtual Lab Simulator: Functional Group Detection</h1>
+   </header>
+<main>
+  <section aria-label="Select Organic Compound">
+    <h2>Select Organic Compound</h2>
+    <label for="compound-select">Choose a compound:</label>
+    <select id="compound-select" aria-describedby="compound-desc">
+      <option value="" disabled selected>Select a compound</option>
+      <option value="ethanol">Ethanol (C2H5OH)</option>
+      <option value="acetone">Acetone (CH3COCH3)</option>
+      <option value="acetic_acid">Acetic Acid (CH3COOH)</option>
+      <option value="benzene">Benzene (C6H6)</option>
+      <option value="aniline">Aniline (C6H5NH2)</option>
+      <option value="phenol">Phenol (C6H5OH)</option>
+      <option value="ethyl_acetate">Ethyl Acetate (CH3COOCH2CH3)</option>
+      <option value="formaldehyde">Formaldehyde (CH2O)</option>
+      <option value="acetylene">Acetylene (C2H2)</option>
+      <option value="toluene">Toluene (C7H8)</option>
+    </select>
+    <div id="compound-desc" style="font-size: 0.9rem; margin-top: 0.25rem; color:#ddd;">
+      Select a compound to simulate its functional group detection.
+    </div>
+    <div class="compound-structure" id="compound-structure" aria-live="polite" aria-atomic="true"></div>
+  </section>
+  <section aria-label="Functional Group Tests">
+    <h2>Functional Group Detection Tests</h2>
+    <div class="test-list" id="test-list" tabindex="0" aria-live="polite" aria-atomic="true">
+      Select a compound to see recommended chemical tests and results here.
+    </div>
+    <button id="run-tests-btn" disabled aria-disabled="true" aria-label="Run Detection Tests">Run Tests</button>
+    <div class="result" id="test-results" aria-live="polite" aria-atomic="true"></div>
+  </section>
+</main>
+<footer>
+  &copy; 2024 Virtual Chemistry Lab Simulator &nbsp;|&nbsp; Simulated environment only
+</footer>
 
-	<!-- Add JS at the bottom of HTML file --> 
-        <script src="./js/main.js"></script>
+<script>
+(function(){
+  // Data: Compounds mapped to their known functional groups and structures
+  const compoundsData = {
+    ethanol: {
+      name: "Ethanol",
+      formula: "C2H5OH",
+      structure: "CH3-CH2-OH",
+      functionalGroups: ["Alcohol"],
+    },
+    acetone: {
+      name: "Acetone",
+      formula: "CH3COCH3",
+      structure: "CH3-CO-CH3",
+      functionalGroups: ["Ketone"],
+    },
+    acetic_acid: {
+      name: "Acetic Acid",
+      formula: "CH3COOH",
+      structure: "CH3-COOH",
+      functionalGroups: ["Carboxylic Acid"],
+    },
+    benzene: {
+      name: "Benzene",
+      formula: "C6H6",
+      structure: "Aromatic Ring (C6H6)",
+      functionalGroups: ["Aromatic"],
+    },
+    aniline: {
+      name: "Aniline",
+      formula: "C6H5NH2",
+      structure: "Aromatic Ring - NH2",
+      functionalGroups: ["Amine", "Aromatic"],
+    },
+    phenol: {
+      name: "Phenol",
+      formula: "C6H5OH",
+      structure: "Aromatic Ring - OH",
+      functionalGroups: ["Phenol", "Aromatic"],
+    },
+    ethyl_acetate: {
+      name: "Ethyl Acetate",
+      formula: "CH3COOCH2CH3",
+      structure: "CH3-COO-CH2CH3",
+      functionalGroups: ["Ester"],
+    },
+    formaldehyde: {
+      name: "Formaldehyde",
+      formula: "CH2O",
+      structure: "H-CHO",
+      functionalGroups: ["Aldehyde"],
+    },
+    acetylene: {
+      name: "Acetylene",
+      formula: "C2H2",
+      structure: "HC≡CH",
+      functionalGroups: ["Alkyne"],
+    },
+    toluene: {
+      name: "Toluene",
+      formula: "C7H8",
+      structure: "Aromatic Ring - CH3",
+      functionalGroups: ["Aromatic"],
+    }
+  };
+
+  // Functional group tests descriptions
+  const functionalGroupTests = {
+    "Alcohol": {
+      description: "Add acidified potassium dichromate (orange to green color change).",
+      positiveResult: "Color changes from orange to green indicating presence of Alcohol.",
+      negativeResult: "No color change; Alcohol functional group likely absent."
+    },
+    "Ketone": {
+      description: "2,4-Dinitrophenylhydrazine (2,4-DNP) test produces yellow/orange precipitate.",
+      positiveResult: "Yellow/orange precipitate formed, indicating Ketone.",
+      negativeResult: "No precipitate forms; Ketone functional group likely absent."
+    },
+    "Aldehyde": {
+      description: "Tollen's test produces silver mirror; or Fehling's test produces reddish precipitate.",
+      positiveResult: "Positive Tollen's test (silver mirror) or Fehling's test (reddish precipitate) indicating Aldehyde.",
+      negativeResult: "No silver mirror or precipitate; Aldehyde functional group likely absent."
+    },
+    "Carboxylic Acid": {
+      description: "Reaction with sodium bicarbonate produces effervescence due to CO2 gas.",
+      positiveResult: "Effervescence observed indicating Carboxylic Acid group.",
+      negativeResult: "No effervescence; Carboxylic Acid group likely absent."
+    },
+    "Amine": {
+      description: "Reaction with nitrous acid at 0-5°C produces nitrogen gas (effervescence).",
+      positiveResult: "Effervescence observed due to nitrogen gas, indicating Amine group.",
+      negativeResult: "No effervescence; Amine group likely absent."
+    },
+    "Phenol": {
+      description: "Reaction with ferric chloride produces violet coloration.",
+      positiveResult: "Violet color indicates presence of Phenol group.",
+      negativeResult: "No color change; Phenol group likely absent."
+    },
+    "Ester": {
+      description: "Characteristic fruity smell on warming with sodium hydroxide.",
+      positiveResult: "Fruity odor detected indicating Ester group.",
+      negativeResult: "No characteristic smell; Ester group likely absent."
+    },
+    "Alkyne": {
+      description: "Addition of bromine water decolorizes the bromine solution.",
+      positiveResult: "Bromine water decolorizes indicating Alkyne group.",
+      negativeResult: "No decolorization; Alkyne group likely absent."
+    },
+    "Aromatic": {
+      description: "Usually inert to many simple tests, but can undergo electrophilic substitution.",
+      positiveResult: "Aromatic characteristics observed based on specific tests.",
+      negativeResult: "No test typically detects aromatic directly here."
+    }
+  };
+
+  // DOM elements
+  const compoundSelect = document.getElementById('compound-select');
+  const compoundDesc = document.getElementById('compound-desc');
+  const compoundStructure = document.getElementById('compound-structure');
+  const testList = document.getElementById('test-list');
+  const runTestsBtn = document.getElementById('run-tests-btn');
+  const testResults = document.getElementById('test-results');
+
+  // Function to display the compound details and tests
+  function displayCompoundInfo(compoundKey) {
+    if (!compoundKey) {
+      compoundDesc.textContent = "Select a compound to simulate its functional group detection.";
+      compoundStructure.textContent = '';
+      testList.textContent = "Select a compound to see recommended chemical tests and results here.";
+      runTestsBtn.disabled = true;
+      runTestsBtn.setAttribute('aria-disabled', 'true');
+      testResults.textContent = '';
+      return;
+    }
+    const compound = compoundsData[compoundKey];
+    compoundDesc.textContent = `Molecular Formula: ${compound.formula}`;
+    compoundStructure.textContent = compound.structure;
+
+    // List the tests for the functional groups present in this compound
+    if (compound.functionalGroups.length === 0){
+      testList.textContent = "No functional groups found or not detectable in this simulation.";
+    } else {
+      testList.innerHTML = "<strong>Chemical Tests to Perform:</strong><ul>";
+      compound.functionalGroups.forEach(fg => {
+        if(functionalGroupTests[fg]){
+          testList.innerHTML += `<li><b>${fg}:</b> ${functionalGroupTests[fg].description}</li>`;
+        } else {
+          testList.innerHTML += `<li><b>${fg}:</b> Test description not available.</li>`;
+        }
+      });
+      testList.innerHTML += "</ul>";
+    }
+    testResults.textContent = '';
+    runTestsBtn.disabled = false;
+    runTestsBtn.setAttribute('aria-disabled', 'false');
+  }
+
+  // Function to run functional group tests simulation
+  function runTests(compoundKey) {
+    if (!compoundKey) return;
+    const compound = compoundsData[compoundKey];
+    if (!compound || compound.functionalGroups.length === 0) {
+      testResults.textContent = "No tests available for this compound.";
+      return;
+    }
+    let resultsHTML = "<strong>Test Results:</strong><ul>";
+    compound.functionalGroups.forEach(fg => {
+      if(functionalGroupTests[fg]){
+        resultsHTML += `<li><b>${fg}:</b> <span style="color:#a6e22e;">&#10004; ${functionalGroupTests[fg].positiveResult}</span></li>`;
+      }
+    });
+
+    // For other common functional groups not present, show negative tests
+    for(const fg in functionalGroupTests){
+      if(compound.functionalGroups.indexOf(fg) === -1){
+        // Show negative result with subtle style
+        resultsHTML += `<li><b>${fg}:</b> <span style="color:#e06c75;">&#10008; ${functionalGroupTests[fg].negativeResult}</span></li>`;
+      }
+    }
+    resultsHTML += "</ul>";
+
+    testResults.innerHTML = resultsHTML;
+    testResults.focus();
+  }
+
+  // Event listeners
+  compoundSelect.addEventListener('change', (e) => {
+    const val = e.target.value;
+    displayCompoundInfo(val);
+  });
+
+  runTestsBtn.addEventListener('click', () => {
+    runTests(compoundSelect.value);
+  });
+
+  // Initialize
+  displayCompoundInfo(null);
+})();
+</script>
 </body>
 </html>
