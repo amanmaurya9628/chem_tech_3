@@ -15,7 +15,7 @@ Functional groups are central to the systematic naming of organic compounds.
 ###@Biological Activity:
 In biochemistry, functional groups determine the biological activity of molecules, influencing drug design and metabolism.
 
-### 2. Overview of the Virtual Lab Simulator
+### 2. Overview of the Lab Simulator
 The simulator is a web-based application that allows users to select an organic compound and perform virtual chemical tests to identify its functional groups. It is structured with a user-friendly interface comprising:
 
 Compound Selection: A dropdown menu to choose from a list of organic compounds.
