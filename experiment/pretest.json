@@ -2,12 +2,29 @@
   "version": 2.0,
   "questions": [
     {
-      "question": "This is a Sample Question 1?",
+      "question": "Which reagent is used to detect alcohols in organic compounds?",
       "answers": {
-        "a": "answer1",
-        "b": "answer2",
-        "c": "answer3",
-        "d": "answer4"
+        "a": " Fehling’s solution",
+        "b": " Acidified potassium dichromate",
+        "c": "Tollen’s reagent",
+        "d": " Bromine water"
+      },
+      "explanations": {
+        "a": "Explanation 1  <a href='www.google.com'>here</a>",
+        "b": "Explanation 2",
+        "c": "Explanation 2",
+        "d": "Explanation 2"
+      },
+      "correctAnswer": "b",
+      "difficulty": "beginner"
+    },
+    {
+      "question": "Which functional group is identified by the silver mirror test?",
+      "answers": {
+        "a": " Aldehyde",
+        "b": " Ketone",
+        "c": "Ester",
+        "d": "Alcohol"
       },
       "explanations": {
         "a": "Explanation 1  <a href='www.google.com'>here</a>",
@@ -18,13 +35,13 @@
       "correctAnswer": "a",
       "difficulty": "beginner"
     },
-    {
-      "question": "This is a Sample Question 2?",
+      {
+      "question": "3.Which functional group gives a fruity smell?",
       "answers": {
-        "a": "answer1",
-        "b": "answer2",
-        "c": "answer3",
-        "d": "answer4"
+        "a": "Amine",
+        "b": "Alcohol",
+        "c": " Ester",
+        "d": "Aldehyde"
       },
       "explanations": {
         "a": "Explanation 1  <a href='www.google.com'>here</a>",
@@ -34,6 +51,41 @@
       },
       "correctAnswer": "c",
       "difficulty": "beginner"
+    },
+      {
+      "question": "4.Which compound gives effervescence with sodium bicarbonate?",
+      "answers": {
+        "a": "Alcohol",
+        "b": "Aldehyde",
+        "c": "Carboxylic acid",
+        "d": "Phenol"
+      },
+      "explanations": {
+        "a": "Explanation 1  <a href='www.google.com'>here</a>",
+        "b": "Explanation 2",
+        "c": "Explanation 2",
+        "d": "Explanation 2"
+      },
+      "correctAnswer": "c",
+      "difficulty": "beginner"
+    },
+      {
+      "question": "5.Ferric chloride test is used to detect which group?",
+      "answers": {
+        "a": "Alcohol",
+        "b": "Ketone",
+        "c": " Aldehyde",
+        "d": " Phenol"
+      },
+      "explanations": {
+        "a": "Explanation 1  <a href='www.google.com'>here</a>",
+        "b": "Explanation 2",
+        "c": "Explanation 2",
+        "d": "Explanation 2"
+      },
+      "correctAnswer": "d",
+      "difficulty": "beginner"
     }
+    
   ]
 }
