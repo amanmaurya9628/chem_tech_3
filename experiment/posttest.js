@@ -90,26 +90,56 @@
 
   const myQuestions = [
     {
-      question: "On increasing the radius of the steel ball to double its value the terminal velocity of the ball become box:",  ///// Write the question inside double quotes
+      question: "What indicates a positive test for phenol using ferric chloride?",  ///// Write the question inside double quotes
       answers: {
-        a: " double",                  ///// Write the option 1 inside double quotes
-        b: "four times",                  ///// Write the option 2 inside double quotes
-        c: "eight times",                  ///// Write the option 3 inside double quotes
-        d: "sixteen times"                   ///// Write the option 4 inside double quotes
+        a: "Silver mirror",                  ///// Write the option 1 inside double quotes
+        b: " Violet color",                  ///// Write the option 2 inside double quotes
+        c: "Reddish precipitate",                  ///// Write the option 3 inside double quotes
+        d: "Fruity odor"                   ///// Write the option 4 inside double quotes
       },
       correctAnswer: "b"                ///// Write the correct option inside double quotes
     },
 
     {
-      question: " On increasing density of material of the falling ball its terminal velocity:",  ///// Write the question inside double quotes
+      question: " Which group decolorizes bromine water?:",  ///// Write the question inside double quotes
       answers: {
-        a: "Increases",                  ///// Write the option 1 inside double quotes
-        b: "decreases",                  ///// Write the option 2 inside double quotes
-        c: "remains constant",                  ///// Write the option 3 inside double quotes
-        d: "NOT"                   ///// Write the option 4 inside double quotes
+        a: " Alcohol",                  ///// Write the option 1 inside double quotes
+        b: "Alkyne",                  ///// Write the option 2 inside double quotes
+        c: " Ester",                  ///// Write the option 3 inside double quotes
+        d: "Ketone"                   ///// Write the option 4 inside double quotes
       },
-      correctAnswer: "a"                ///// Write the correct option inside double quotes
-    },                                  ///// To add more questions, copy the section below 
+      correctAnswer: "b"                ///// Write the correct option inside double quotes
+    },
+       {
+      question: " What is the result of a positive Tollen’s test?",  ///// Write the question inside double quotes
+      answers: {
+        a: " Reddish brown gas",                  ///// Write the option 1 inside double quotes
+        b: " Silver mirror",                  ///// Write the option 2 inside double quotes
+        c: " Violet color",                  ///// Write the option 3 inside double quotes
+        d: "Effervescence"                   ///// Write the option 4 inside double quotes
+      },
+      correctAnswer: "b"                ///// Write the correct option inside double quotes
+    },///// To add more questions, copy the section below 
+       {
+      question: " What result do you expect if an ester is heated with NaOH",  ///// Write the question inside double quotes
+      answers: {
+        a: "Violet color",                  ///// Write the option 1 inside double quotes
+        b: "Effervescence",                  ///// Write the option 2 inside double quotes
+        c: " Fruity smell",                  ///// Write the option 3 inside double quotes
+        d: "No change"                   ///// Write the option 4 inside double quotes
+      },
+      correctAnswer: "c"                ///// Write the correct option inside double quotes
+    },
+       {
+      question: " What confirms the presence of amine group when reacted with nitrous acid?",  ///// Write the question inside double quotes
+      answers: {
+        a: " Formation of red precipitate",                  ///// Write the option 1 inside double quotes
+        b: "Fruity odor",                  ///// Write the option 2 inside double quotes
+        c: " Effervescence due to nitrogen gas",                  ///// Write the option 3 inside double quotes
+        d: "No visible reaction"                   ///// Write the option 4 inside double quotes
+      },
+      correctAnswer: "c"                ///// Write the correct option inside double quotes
+    },
     									                  ///// this line
 
 
