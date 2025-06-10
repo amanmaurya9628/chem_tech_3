@@ -1,1 +1,1 @@
-### Aim of the experiment
+### Element detection and identification of functional group in organic compounds
