@@ -2,12 +2,12 @@
   "version": 2.0,
   "questions": [
     {
-      "question": "This is a Sample Question 1?",
+      "question": "1.What indicates a positive test for phenol using ferric chloride?",
       "answers": {
-        "a": "answer1",
-        "b": "answer2",
-        "c": "answer3",
-        "d": "answer4"
+        "a": "Silver mirror",
+        "b": "Violet color",
+        "c": "Reddish precipitate",
+        "d": "Fruity odor"
       },
       "explanations": {
         "a": "Explanation 1  <a href='www.google.com'>here</a>",
@@ -15,16 +15,50 @@
         "c": "Explanation 2",
         "d": "Explanation 2"
       },
-      "correctAnswer": "a",
+      "correctAnswer": "b",
       "difficulty": "beginner"
     },
     {
-      "question": "This is a Sample Question 2?",
+      "question": "2.Which group decolorizes bromine water??",
       "answers": {
-        "a": "answer1",
-        "b": "answer2",
-        "c": "answer3",
-        "d": "answer4"
+        "a": "Alcohol",
+        "b": "Alkyne",
+        "c": "Ester",
+        "d": "Ketone"
+      },
+      "explanations": {
+        "a": "Explanation 1  <a href='www.google.com'>here</a>",
+        "b": "Explanation 2",
+        "c": "Explanation 2",
+        "d": "Explanation 2"
+      },
+      "correctAnswer": "b",
+      "difficulty": "beginner"
+    },
+     {
+      "question": "3.What is the result of a positive Tollen’s test?",
+      "answers": {
+        "a": "Reddish brown gas",
+        "b": "Silver mirror",
+        "c": " Violet color",
+        "d": " Effervescence"
+      },
+      "explanations": {
+        "a": "Explanation 1  <a href='www.google.com'>here</a>",
+        "b": "Explanation 2",
+        "c": "Explanation 2",
+        "d": "Explanation 2"
+      },
+      "correctAnswer": "b",
+      "difficulty": "beginner"
+    },
+     {
+      "question": "4.What result do you expect if an ester is heated with NaOH?",
+      "answers": {
+        "a": " Violet color",
+        "b": "Effervescence",
+        "c": "Fruity smell",
+        "d": " No change"
       },
       "explanations": {
         "a": "Explanation 1  <a href='www.google.com'>here</a>",
@@ -34,6 +68,23 @@
       },
       "correctAnswer": "c",
       "difficulty": "beginner"
-    }
+    },
+     {
+      "question": "5.What confirms the presence of amine group when reacted with nitrous acid?",
+      "answers": {
+        "a": "Formation of red precipitate",
+        "b": " Fruity odor",
+        "c": "Effervescence due to nitrogen gas",
+        "d": "No visible reaction"
+      },
+      "explanations": {
+        "a": "Explanation 1  <a href='www.google.com'>here</a>",
+        "b": "Explanation 2",
+        "c": "Explanation 2",
+        "d": "Explanation 2"
+      },
+      "correctAnswer": "c",
+      "difficulty": "beginner"
+    },
   ]
 }
