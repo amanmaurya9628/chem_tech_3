@@ -75,7 +75,7 @@ Observation: Formation of violet coloration.
 
 Mechanism: Phenols form colored complexes with Fe³⁺ ions.
 
-3.7. Esters
+### Esters
 Test: Warming with sodium hydroxide.
 
 Observation: Fruity odor indicates ester hydrolysis.
@@ -105,7 +105,7 @@ Reinforcing Theoretical Knowledge: Bridges the gap between theory and practice.
 
 Facilitating Remote Learning: Accessible from anywhere, supporting distance education.
 
-### 6. Conclusion
+###  Conclusion
 The "Virtual Lab Simulator: Functional Group Detection" is a comprehensive educational platform that integrates theoretical knowledge with practical application. By simulating chemical tests and providing immediate feedback, it offers an immersive learning experience that reinforces the principles of organic chemistry and functional group identification.
 
 
