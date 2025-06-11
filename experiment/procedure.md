@@ -1,5 +1,5 @@
 
-###  Procedure 
+
 The simulator guides users through a systematic procedure to identify functional groups:
 
 ###  Compound Selection
