@@ -90,7 +90,7 @@
 
   const myQuestions = [
     {
-      question: "1. Which reagent is used to detect alcohols in organic compounds?,  ///// Write the question inside double quotes
+      question: " Which reagent is used to detect alcohols in organic compounds?,  ///// Write the question inside double quotes
       answers: {
         a: " Fehling’s solution",                  ///// Write the option 1 inside double quotes
         b: "Acidified potassium dichromate",                  ///// Write the option 2 inside double quotes
@@ -101,7 +101,7 @@
     },
 
     {
-     question: "2. Which functional group is identified by the silver mirror test?",  ///// Write the question inside double quotes
+     question: " Which functional group is identified by the silver mirror test?",  ///// Write the question inside double quotes
       answers: {
         a: " Aldehyde",                  ///// Write the option 1 inside double quotes
         b: "Ketone",                  ///// Write the option 2 inside double quotes
@@ -111,7 +111,7 @@
       correctAnswer: "a"                ///// Write the correct option inside double quotes
     },     
     {
-      question: "3. Which functional group gives a fruity smell?",  ///// Write the question inside double quotes
+      question: " Which functional group gives a fruity smell?",  ///// Write the question inside double quotes
        answers: {
          a: " Amine",                  ///// Write the option 1 inside double quotes
          b: "Alcohol",                  ///// Write the option 2 inside double quotes
@@ -121,7 +121,7 @@
        correctAnswer: "c"                ///// Write the correct option inside double quotes
      }, 
      {
-      question: "4.Which compound gives effervescence with sodium bicarbonate?",  ///// Write the question inside double quotes
+      question: "Which compound gives effervescence with sodium bicarbonate?",  ///// Write the question inside double quotes
        answers: {
          a: " Alcohol",                  ///// Write the option 1 inside double quotes
          b: "Aldehyde",                  ///// Write the option 2 inside double quotes
@@ -131,7 +131,7 @@
        correctAnswer: "c"                ///// Write the correct option inside double quotes
      },   
     {
-      question: "5.Ferric chloride test is used to detect which group?",  ///// Write the question inside double quotes
+      question: "Ferric chloride test is used to detect which group?",  ///// Write the question inside double quotes
        answers: {
          a: " Alcohol",                  ///// Write the option 1 inside double quotes
          b: " Ketone",                  ///// Write the option 2 inside double quotes
