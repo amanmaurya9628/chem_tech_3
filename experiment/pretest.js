@@ -90,7 +90,7 @@
 
   const myQuestions = [
     {
-      question: " Which reagent is used to detect alcohols in organic compounds?,  ///// Write the question inside double quotes
+      question: " Which reagent is used to detect alcohols in organic compounds?,  ///// Write the question inside double quotes",
       answers: {
         a: " Fehling’s solution",                  ///// Write the option 1 inside double quotes
         b: "Acidified potassium dichromate",                  ///// Write the option 2 inside double quotes
